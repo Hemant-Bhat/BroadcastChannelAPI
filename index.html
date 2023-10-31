@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Broadcast Channel Example</title>
+    <style type="text/css">
+        *{
+            box-sizing: border-box;
+        }
+        .container{
+            margin: 0 auto;
+            max-width: 400px;
+        }
+        .chat-window{
+            width: 100%;
+            min-height: 50vh;
+            max-height: 80vh;
+            padding: 1.2rem;
+            margin-top: 0.5rem;
+            overflow-y: auto;
+            border: 1px solid #000;
+        }
+
+        .chat-message{
+            width: 100%
+        }
+
+        .message{
+            clear: both;
+            width: 80%;
+            padding: 0.5rem;
+            border: 1px solid #000;
+            border-radius: 10px;
+            margin: .5rem 0;
+        }
+
+        .message.from-self{
+            float: right;
+        }
+
+        .message p {
+            margin: 0;
+        }
+
+
+        .message-input{
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #000;
+        }
+
+        .error{
+            animation: blink 0.5s 3 alternate;
+        }
+
+        @keyframes blink{
+            0%{
+                background-color: #ffc7c7;
+            }
+            50%{
+                background-color: #fffcfc;
+            }
+            100%{
+                background-color: #ffc7c7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Chat</h1>
+        <a href="/" target="_blank">Open another tab to see the chats</a>
+        <div id="chat-window" class="chat-window">
+        </div>
+        <div style="display: flex;">
+            <input id="message-input" class="message-input" placeholder="Enter message..."/>
+            <button type="button" id="send-message-btn" style="padding: 0 10px;font-size: 20px;">&#10148;</button>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    <audio src="./message-tune.mp3" id="message-tune" style="display: none;"></audio>
+</body>
+</html>
